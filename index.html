@@ -1,0 +1,17 @@
+<html>
+<head>
+  <script src="socket.io.min.js"></script>
+  <script type="text/javascript">
+    var socket = io(window.location.href);
+
+    socket.on('new_image', function(data) {
+      var image = document.getElementById('remote_screen');
+      image.src = data;
+    });
+  </script>
+</head>
+
+<body>
+  <img id="remote_screen" src=""></img>
+</body>
+</html>
